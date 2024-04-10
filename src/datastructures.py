@@ -44,25 +44,23 @@ class FamilyStructure:
     
     # return randint(0, 99999999) #---- SI QUISIERA CREAR UN ID Aleatorio----
 
-    def add_member(self, member):
-        # fill this method and update the return
-        family_member = {
-            "id" : self._generateId(),
-            "first_name" : member.get("first_name"),
-            "last_name" : self.last_name,
-            "age" : member.get("age"),
-            "lucky_numbers" : member.get("lucky_numbers")
-        }
-        self._members.append(family_member)
-        return (family_member)
 
-        # for new_member in self._members:
-        #     if new_member["id"] == member["id"]:
-        #         return {"msg": "El usuario ya existe"}
-        #     else:
-        #         self._members.append(member)
-        #         return {"msg": "Usuario creado correctamente"}, self._members
+    def add_member(self, member):
+            for new_member in self._members:
+                if new_member['id'] == member['id']:
+                    return {'msg': 'El usuario ya existe'}
+            self._members.append(member)
+            return {'msg': 'Usuario creado correctamente'}, self._members
         
+    #     family_member = {
+    #         "id" : self._generateId(),
+    #         "first_name" : member.get("first_name"),
+    #         "last_name" : self.last_name,
+    #         "age" : member.get("age"),
+    #         "lucky_numbers" : member.get("lucky_numbers")
+    #     }
+    #     self._members.append(family_member)
+    #     return (family_member)
 
     def delete_member(self, id):
         # fill this method and update the return
