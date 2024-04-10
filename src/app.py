@@ -50,7 +50,7 @@ def add_member():
         if not request_body:
             return jsonify({'msg' : 'Bad Request'}), 400
         new_member = jackson_family.add_member(request_body)
-        return jsonify(new_member), 200
+        return (new_member)
 
 @app.route('/member/<int:member_id>', methods=['DELETE'])
 def delete_member(member_id):
