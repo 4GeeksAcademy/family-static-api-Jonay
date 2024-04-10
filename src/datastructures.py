@@ -51,7 +51,8 @@ class FamilyStructure:
                     return {'msg': 'El usuario ya existe'}
             self._members.append(member)
             return {'msg': 'Usuario creado correctamente'}, self._members
-        
+    
+    # def add_member(self, member):    
     #     family_member = {
     #         "id" : self._generateId(),
     #         "first_name" : member.get("first_name"),
@@ -60,7 +61,7 @@ class FamilyStructure:
     #         "lucky_numbers" : member.get("lucky_numbers")
     #     }
     #     self._members.append(family_member)
-    #     return (family_member)
+    #     return {'msg': 'Usuario creado correctamente'}
 
     def delete_member(self, id):
         # fill this method and update the return
